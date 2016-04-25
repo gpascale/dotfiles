@@ -1,5 +1,7 @@
 # Add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export P4PORT=ssl:p4proxy.soma.salesforce.com:1999
+export P4CLIENT=gpascale-ltm1-blt
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -37,3 +39,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# added by Anaconda2 4.0.0 installer
+export PATH="/Users/gpascale/anaconda/bin:/anaconda/bin:$PATH"
