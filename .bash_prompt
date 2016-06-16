@@ -43,7 +43,6 @@ export PURPLE
 export WHITE
 export BOLD
 export RESET
-export GRAY
 
 function parse_git_dirty() {
 	[[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
@@ -53,10 +52,10 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-
-PS1HOST=""
+# PS1
+HOSTPART=""
 if [ -n "$SSH_CLIENT" ]; then
-    PS1HOST="\[${BOLD}${GREEN}\]\u\[$WHITE\]@\[$ORANGE\]\h "
+	HOSTPART="\[$(tput bold)\]\e[1;32m\u\[$(tput sgr0)\]\[$(tput sgr0)\]\033[1;37m@\[$(tput bold)\]\[$(tput sgr0)\]\[\033[38;5;11m\]$(tput bold)\h\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]: "
 fi
-export PS1="$PS1HOST""\[$WHITE\]\[$WHITE\]\w\[$PURPLE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \$ \[$RESET\]"
+export PS1="$HOSTPART\033[1;37m\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;244m\]$(tput bold)[\[\]\t\[\033[38;5;244m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]\033[1;35m $(parse_git_branch)\n\[$(tput sgr0)\]> \[$(tput sgr0)\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
