@@ -148,5 +148,8 @@ alias reload="exec $SHELL -l"
 # Faster npm for europeans
 command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.eu"
 
+alias mtav='ssh megatron@avanpelt-wsm'
 alias mt='ssh megatron@srickard-wsm'
 alias ws='ssh gpascale-wsl2'
+alias sshimp='ssh -A ubuntu@35.162.83.179 -t ssh docker-dev-0.vpc-internal'
+alias imp='ubuntu@35.162.83.179'
