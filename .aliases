@@ -153,3 +153,6 @@ alias mt='ssh megatron@srickard-wsm'
 alias ws='ssh gpascale-wsl2'
 alias sshimp='ssh -A ubuntu@35.162.83.179 -t ssh docker-dev-0.vpc-internal'
 alias imp='ubuntu@35.162.83.179'
+
+# Make tree print out sizes by default
+alias tree='tree -h'

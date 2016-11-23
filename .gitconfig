@@ -99,3 +99,7 @@
 	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\"\n        \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 [difftool "diffmerge"]
 	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
+
+[user]
+	email = "greg.pascale@gmail.com"
+	name = "Greg Pascale"
